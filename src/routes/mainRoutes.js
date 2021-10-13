@@ -17,4 +17,12 @@ export const mainRoutes = [
     ),
     exact: true,
   },
+  // {
+  //   name: "DM",
+  //   path: "/movies/:movieId",
+  //   component: lazy(
+  //     () => import("../pages/MoviesPage") /* webpackChunkName: "MoviesPage" */
+  //   ),
+  //   exact: true,
+  // },
 ];
