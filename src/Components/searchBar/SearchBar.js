@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styles from './SearchBar.module.css'
+
 
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
@@ -15,7 +17,7 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={onHandleSubmit}>
+    <form onSubmit={onHandleSubmit} className={styles.form}>
       <input type="text" value={query} name="query" onChange={onHandleChange} />
       <button type="submit">Search</button>
     </form>

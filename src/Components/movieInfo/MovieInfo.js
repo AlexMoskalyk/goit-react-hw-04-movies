@@ -1,10 +1,12 @@
 import React from "react";
 import imageNoImg from "../../assets/images/placeholder.png";
+import styles from "./MovieInfo.module.css";
 
 const MovieInfo = ({ movie }) => {
   return (
-    <>
+    <div className={styles.container}>
       <img
+        className={styles.img}
         src={
           movie.backdrop_path === null
             ? imageNoImg
@@ -12,22 +14,27 @@ const MovieInfo = ({ movie }) => {
         }
         alt={movie.original_title}
       />
-      <div>
-        <h2>
-          {movie.original_title}
-          {movie.release_date}
+      <div className={styles.textcontainer}>
+        <h2 className={styles.title}>
+          {movie.original_title}({movie.release_date})
         </h2>
-        <p>{movie.overview}</p>
-        <p>User score:{movie.vote_average}</p>
+        <h3>Overview:</h3>
+        <p className={styles.overviewText}>{movie.overview}</p>
+        <p className={styles.score}>
+          <span className={styles.scoreText}>User score</span>:
+          {movie.vote_average}%
+        </p>
+        <h3>Genres:</h3>
         <p>
-          Genres:
           {movie.genres &&
             movie.genres.map((genre) => (
-              <span key={genre.name}>{genre.name}</span>
+              <span key={genre.name} className={styles.genreItem}>
+                {genre.name}
+              </span>
             ))}
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

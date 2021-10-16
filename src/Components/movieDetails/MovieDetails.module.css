@@ -1,0 +1,17 @@
+.DetAndRevLink {
+  display: flex;
+  flex-direction: column;
+}
+
+.castLink {
+  margin-bottom: 15px;
+}
+
+.aditionalTitle {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.revLink {
+  margin-bottom: 15px;
+}

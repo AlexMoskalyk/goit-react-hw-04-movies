@@ -1,4 +1,5 @@
 .list {
+  padding: 15px;
   display: flex;
   align-items: center;
   list-style: none;

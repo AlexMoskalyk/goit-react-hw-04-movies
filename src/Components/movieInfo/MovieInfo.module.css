@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+}
+.textcontainer {
+  padding-left: 15px;
+}
+
+.genreItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.overviewText {
+  margin-bottom: 20px;
+}
+
+.score {
+  margin-bottom: 20px;
+}
+.scoreText {
+  font-weight: bold;
+}
