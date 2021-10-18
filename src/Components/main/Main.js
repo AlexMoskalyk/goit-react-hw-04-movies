@@ -1,9 +1,15 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router";
 import styles from "./Main.module.css";
 import { mainRoutes } from "../../routes/mainRoutes";
 import Loader from "../loader/Loader";
-import MovieDatailsPage from "../../pages/MovieDatailsPage";
+
+const MovieDetailsPage = lazy(
+  () =>
+    import(
+      "../../pages/MovieDatailsPage"
+    ) /* webpackChunkName: "MovieDetailsPage" */
+);
 
 const Main = () => {
   return (
@@ -12,7 +18,7 @@ const Main = () => {
         <Switch>
           <Route
             path="/movies/:movieId"
-            component={MovieDatailsPage}
+            component={MovieDetailsPage}
             exact={false}
           />
           {mainRoutes.map((route) => (

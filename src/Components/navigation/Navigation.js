@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { mainRoutes } from "../../routes/mainRoutes";
 import styles from "./Navigation.module.css";
+import PropTypes from "prop-types";
 
 const Navigation = () => {
   return (
@@ -20,6 +21,10 @@ const Navigation = () => {
       ))}
     </ul>
   );
+};
+
+Navigation.propTypes = {
+  mainRoutes: PropTypes.array,
 };
 
 export default Navigation;

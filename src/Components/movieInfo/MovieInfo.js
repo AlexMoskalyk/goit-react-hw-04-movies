@@ -1,6 +1,7 @@
 import React from "react";
 import imageNoImg from "../../assets/images/placeholder.png";
 import styles from "./MovieInfo.module.css";
+import PropTypes from "prop-types";
 
 const MovieInfo = ({ movie }) => {
   return (
@@ -36,6 +37,10 @@ const MovieInfo = ({ movie }) => {
       </div>
     </div>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.object,
 };
 
 export default MovieInfo;

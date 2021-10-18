@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+
 import { useState } from "react";
 import ReviewsList from "../reviewsList/ReviewsList";
 import { fetchRewiewsById } from "../services/API";
@@ -9,7 +11,7 @@ const Reviews = ({ movieId }) => {
   useEffect(() => {
     fetchRewiewsById(movieId)
       .then(setReviews)
-      .catch(console.log((error) => console.log(error)));
+      .catch((error) => console.log(error));
   }, [movieId]);
 
   return (
@@ -19,4 +21,7 @@ const Reviews = ({ movieId }) => {
   );
 };
 
+Reviews.propTypes = {
+  movieId: PropTypes.string,
+};
 export default Reviews;
